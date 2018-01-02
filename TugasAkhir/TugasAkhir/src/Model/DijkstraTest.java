@@ -23,7 +23,7 @@ import org.graphstream.graph.EdgeFactory;
 import org.graphstream.graph.EdgeRejectedException;
 import org.graphstream.graph.ElementNotFoundException;
 import org.miv.mbox.Test;
-import org.graphstream.graph.Graph;
+//import org.graphstream.graph.Graph;
 import org.graphstream.graph.IdAlreadyInUseException;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.NodeFactory;
@@ -34,13 +34,14 @@ import org.graphstream.stream.Sink;
 import org.graphstream.stream.file.FileSink;
 import org.graphstream.stream.file.FileSource;
 import org.graphstream.ui.swingViewer.Viewer;
+import scala.xml.PrettyPrinter.Item;
 
 /**
  *
  * @author VELIA
  */
 public class DijkstraTest {
-    private Graph graph;
+//    private Graph graph;
     private ArrayList<Vertex> nodes;
     private ArrayList<Segments> segment; 
     Connection conn = null;
@@ -62,21 +63,20 @@ public class DijkstraTest {
         }
         
         // check from location qp to destination    
-               
         Graph graph = new Graph(nodes, segment);
 //        DijkstraAlgorithm dijkstra = new DijkstraAlgorithm(graph);
 //        dijkstra.execute(nodes.get(app.getjComboYourLocation().getSelectedIndex()));
-//        dijkstra.execute(nodes.get(0)); //get qp
-//        LinkedList<Vertex> path = dijkstra.getPath(nodes.get(11)); //get destination
-     
+//        LinkedList<Vertex> path = dijkstra.getPath(nodes.get(app.getjComboDestinationObject().getSelectedIndex()));
+//    
         String isiReturn = "";
         
         for (int i = 0; i < segment.size(); i++) {
             isiReturn += segment.get(i).getSource().getId()+ "->" + segment.get(i).getDestination().getId() + "\n";
         }
+        System.out.println(isiReturn);
 
         return isiReturn;
     }
 
-   
+    
 }
